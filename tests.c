@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   tests.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 17:24:03 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/10/29 18:29:28 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/10/29 18:36:42 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/10/29 19:21:08 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <assert.h>
 #include <stdlib.h>
 
-void	*ft_memalloc(size_t size)
+//TODO: replace free with ftlib-equivalent
+void	test_memalloc(void)
 {
 	void	*ptr;
+	int		i;
 
-	ptr = malloc(size);
-	return (ptr);
+	ptr = ft_memalloc(sizeof(char) * 8);
+	i = 0;
+	while (i < 8)
+	{
+		(char *) ptr[i] = '\0';
+		i++;
+	}
+	free(ptr);
 }

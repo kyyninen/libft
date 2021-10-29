@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 17:24:03 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/10/29 18:29:28 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/10/28 10:06:42 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/10/29 19:15:27 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	*ft_memalloc(size_t size)
+char	*ft_strdup(char *src)
 {
-	void	*ptr;
+	int		len;
+	int		i;
+	char	*dup;
 
-	ptr = malloc(size);
-	return (ptr);
+	i = 0;
+	len = ft_strlen(src);
+	dup = (char *)ft_memalloc(sizeof(char) * len + 1);
+	if (!dup)
+		return (0);
+	while (i < len)
+	{
+		dup[i] = src[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }

@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 17:24:03 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/10/29 18:29:28 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/10/26 11:29:05 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/10/26 11:30:06 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
-
-void	*ft_memalloc(size_t size)
+int	ft_strlen(char *str)
 {
-	void	*ptr;
+	int	len;
 
-	ptr = malloc(size);
-	return (ptr);
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }

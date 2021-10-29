@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 17:24:03 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/10/29 18:29:28 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/10/26 11:34:50 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/10/27 16:35:00 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
-
-void	*ft_memalloc(size_t size)
+int	ft_strcmp(char *s1, char *s2)
 {
-	void	*ptr;
+	int	i;
 
-	ptr = malloc(size);
-	return (ptr);
+	i = 0;
+	while (s1[i] || s2[i])
+	{
+		if (s1[i] - s2[i] != 0)
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
 }
