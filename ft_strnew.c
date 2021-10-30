@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 17:26:45 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/10/30 22:13:03 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/10/30 21:17:09 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/10/30 21:56:49 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <string.h>
+#include "libft.h"
+#include <stdlib.h>
 
-int		ft_strcmp(char *s1, char *s);
-int		ft_strlen(char *str);
-char	*ft_strdup(char *str);
-void	*ft_memalloc(size_t size);
-void	ft_memdel(void **ap);
-char	*ft_strnew(size_t size);
-void	ft_strdel(char **as);
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
+char	*ft_strnew(size_t size)
+{
+	char	*str;
 
-#endif
+	str = (char *) malloc(sizeof(char) * size);
+	if (str)
+	{
+		while (size-- > 0)
+			str[size] = '\0';
+	}
+	return (str);
+}
