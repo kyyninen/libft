@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 17:26:45 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/10/30 18:59:24 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/10/30 18:57:45 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/10/30 18:58:54 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <string.h>
+#include <unistd.h>
 
-int		ft_strcmp(char *s1, char *s);
-int		ft_strlen(char *str);
-char	*ft_strdup(char *str);
-void	*ft_memalloc(size_t size);
-void	ft_putchar(char c);
-void	ft_putstr(char* str);
-
-#endif
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
