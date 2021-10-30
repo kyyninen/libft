@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 17:26:45 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/10/30 21:03:48 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/10/30 20:56:47 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/10/30 21:01:37 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <string.h>
+#include "libft.h"
+#include <stdlib.h>
 
-int		ft_strcmp(char *s1, char *s);
-int		ft_strlen(char *str);
-char	*ft_strdup(char *str);
-void	*ft_memalloc(size_t size);
-void	ft_memdel(void **ap);
-void	ft_putchar(char c);
-void	ft_putstr(char* str);
-
-#endif
+void	ft_memdel(void **ap)
+{
+	free(*ap);
+	*ap = 0;
+}
