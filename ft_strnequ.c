@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 17:24:03 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/02 11:23:38 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/11/02 11:40:48 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/11/02 11:49:38 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	*ft_memalloc(size_t size)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	void	*ptr;
-	size_t	i;
-
-	ptr = malloc(size);
-	i = 0;
-	while (i < size)
-		*(int *)(ptr + i++) = 0;
-	return (ptr);
+	while(*s1 == *s2 && n > 1)
+	{
+		s1++;
+		s2++;
+		n--;
+		if (*s1 == '\0' && *s2 == '\0')
+			return (1);
+	}
+	if (*s1 == *s2)
+		return (1);
+	return (0);
 }
