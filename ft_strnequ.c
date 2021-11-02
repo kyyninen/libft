@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:40:48 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/02 11:49:38 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/02 15:26:20 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	while(*s1 == *s2 && n > 1)
+	while (*s1 == *s2 && n > 1)
 	{
 		s1++;
 		s2++;

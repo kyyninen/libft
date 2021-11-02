@@ -6,14 +6,14 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 18:53:25 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/01 18:59:16 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/02 15:22:30 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strmapi(char const *s, char(*f) (unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 {
 	char	*s2;
 	size_t	len;
