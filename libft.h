@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 17:26:45 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/03 10:51:44 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/03 16:57:18 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
 void	ft_putchar(char c);
-void	ft_putstr(char *str);
+void	ft_putstr(char const *str);
+void	ft_putendl(char const *str);
+void	ft_putnbr(int n);
 
 #endif

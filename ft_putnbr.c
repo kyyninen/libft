@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 17:24:03 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/03 17:44:06 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/11/03 16:56:00 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/11/03 16:57:23 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	*ft_memalloc(size_t size)
+void	ft_putnbr(int n)
 {
-	void	*ptr;
-	size_t	i;
-
-	ptr = malloc(size);
-	if (!ptr)
-		return (NULL);
-	i = 0;
-	while (i < size)
-		*(int *)(ptr + i++) = 0;
-	return (ptr);
+	ft_putstr(ft_itoa(n));
 }
