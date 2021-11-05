@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teppo <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 22:16:36 by teppo             #+#    #+#             */
-/*   Updated: 2021/11/05 13:22:38 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/11/05 11:13:32 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/11/05 16:02:29 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_islower(int c)
+int	ft_isascii(int c)
 {
-	return (c > 96 && c < 123);
-}
-
-static int	ft_isupper(int c)
-{
-	return (c > 64 && c < 91);
-}
-
-int	ft_isalpha(int c)
-{
-	return (ft_islower(c) || ft_isupper(c));
+	return (c >= 0 && c <= 0177);
 }

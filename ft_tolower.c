@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teppo <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 22:16:36 by teppo             #+#    #+#             */
-/*   Updated: 2021/11/05 13:22:38 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/11/05 12:41:15 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/11/05 12:42:26 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-static int	ft_islower(int c)
-{
-	return (c > 96 && c < 123);
-}
 
 static int	ft_isupper(int c)
 {
 	return (c > 64 && c < 91);
 }
 
-int	ft_isalpha(int c)
+int	ft_tolower(int c)
 {
-	return (ft_islower(c) || ft_isupper(c));
+	if (ft_isupper(c))
+		return (c + 32);
+	return (c);
 }

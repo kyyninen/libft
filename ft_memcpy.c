@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teppo <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 22:14:51 by teppo             #+#    #+#             */
-/*   Updated: 2021/11/05 10:56:58 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/11/05 10:42:12 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/11/05 10:53:42 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	void	*buf;
 	size_t	i;
 
-	buf = ft_memalloc(len);
-	if (!buf)
-		return (NULL);
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
-		*(char *)(buf + i) = *(char *)(src + i);
-		i++;
-	}
-	i = 0;
-	while (i < len)
-	{
-		*(char *)(dst + i) = *(char *)(buf + i);
+		*(char *)(dst + i) = *(char *)(src + i);
 		i++;
 	}
 	return (dst);
-}
+}	

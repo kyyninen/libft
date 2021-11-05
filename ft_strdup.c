@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 10:06:42 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/10/29 19:15:27 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/05 15:25:48 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(char *src)
 {
-	int		len;
-	int		i;
+	size_t	len;
+	size_t	i;
 	char	*dup;
 
 	i = 0;
