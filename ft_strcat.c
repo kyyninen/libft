@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/30 20:56:47 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/07 19:20:18 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/11/07 15:43:12 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/11/07 18:52:04 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	ft_memdel(void **ap)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	free(*ap);
-	*ap = 0;
+	size_t	i;
+
+	i = ft_strlen(s1);
+	while (*s2)
+		s1[i++] = *s2++;
+	s1[i] = '\0';
+	return (s1);
 }
