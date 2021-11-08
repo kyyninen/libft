@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 18:57:58 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/08 19:55:23 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/11/08 19:28:24 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/11/08 19:43:05 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
-	i = 0;
-	while (i < n)
+	i = ft_strlen(s1);
+	while (n > 0 && *s2)
 	{
-		if (*(unsigned char *)(s1 + i) != *(unsigned char *)(s2 + i))
-			return (*(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i));
+		s1[i++] = *s2++;
+		n--;
 	}
-	return (0);
+	return (s1);
 }
