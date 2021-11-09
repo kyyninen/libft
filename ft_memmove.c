@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 18:29:37 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/07 19:11:26 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/09 22:29:42 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,22 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	void	*buf;
-	size_t	i;
+	char	*d;
+	char	*s;
 
-	buf = ft_memalloc(len);
-	if (!buf)
-		return (0);
-	i = 0;
-	while (i < len)
+	d = (char *) dst;
+	s = (char *) src;
+	if (dst < src)
 	{
-		*(char *)(buf + i) = *(char *)(src + i);
-		i++;
+		while (len--)
+			*d++ = *s++;
 	}
-	i = 0;
-	while (i < len)
+	else
 	{
-		*(char *)(dst + i) = *(char *)(buf + i);
-		i++;
+		d += len - 1;
+		s += len - 1;
+		while (len--)
+			*d-- = *s--;
 	}
-	ft_memdel(&buf);
 	return (dst);
 }

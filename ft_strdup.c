@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 10:06:42 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/08 19:51:20 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/09 22:54:14 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,13 @@
 
 char	*ft_strdup(char *src)
 {
-	size_t	len;
-	size_t	i;
+	size_t	size;
 	char	*dup;
 
-	i = 0;
-	len = ft_strlen(src);
-	dup = (char *)ft_memalloc(sizeof(char) * len + 1);
+	size = ft_strlen(src) + 1;
+	dup = (char *)ft_memalloc(sizeof(char) * size);
 	if (!dup)
 		return (NULL);
-	while (i < len)
-	{
-		dup[i] = src[i];
-		i++;
-	}
-	dup[i] = '\0';
+	ft_memcpy(dup, src, size);
 	return (dup);
 }
