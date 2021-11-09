@@ -6,80 +6,61 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 10:49:02 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/03 12:53:52 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/09 17:50:04 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-static size_t	intlen(int n)
+int	intlen(int n)
 {
-	size_t	i;
+	int	len;
 
-	i = 1;
-	if (n < 0)
-	{
-		i++;
-		n = -n;
-	}
-	else if (n < 10)
+	len = 0;
+	if (n == 0)
 		return (1);
-	while (n / 10 > 0)
+	if (n < 0)
+		len++;
+	if (n > -10 && n < 10)
+		return (len + 1);
+	while (n != 0)
 	{
-		i++;
 		n /= 10;
+		len++;
 	}
-	return (i);
+	return (len);
 }
 
-static char	*strrev(char *str)
+int	abs(int n)
 {
-	char	*rev;
-	int		len;
-	int		i;
-
-	len = ft_strlen(str);
-	rev = ft_strnew(len + 1);
-	i = 0;
-	while (i < len)
-	{
-		rev[i] = str[len - i - 1];
-		i++;
-	}
-	i = 0;
-	while (i < len)
-	{
-		str[i] = rev[i];
-		i++;
-	}
-	ft_strdel(&rev);
-	return (str);
+	if (n < 0)
+		return (-n);
+	else
+		return (n);
 }
 
 char	*ft_itoa(int n)
 {
 	int		sign;
-	int		i;
+	int		len;
 	char	*str;
 
-	str = ft_strnew(intlen(n) + 1);
 	if (n < 0)
-		sign = -1;
-	else
 		sign = 1;
-	n *= sign;
-	i = 0;
+	else
+		sign = 0;
+	len = intlen(n);
+	str = (char *) malloc(sizeof(char) * (len + 1));
+	str[len--] = '\0';
 	if (n == 0)
-		*str = '0';
+		str[len--] = '0';
 	while (n != 0)
 	{
-		if (n % 10 > 9)
-			str[i++] = ((n % 10) - 10) + 'a';
-		else
-			str[i++] = (n % 10) + '0';
+		str[len--] = '0' + (abs(n % 10));
 		n /= 10;
 	}
-	if (sign < 0)
-		str[i] = '-';
-	return (strrev(str));
+	if (sign)
+		str[len] = '-';
+	return (str);
 }
