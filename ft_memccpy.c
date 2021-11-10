@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:42:12 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/10 18:44:26 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/10 18:48:34 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	char	*d1;
 	char	*s1;
 
-	if (!dst || !src)
-		return (dst);
-	d1 = (char *) dst;
+	if (!dest || !src)
+		return (dest);
+	d1 = (char *) dest;
 	s1 = (char *) src;
-	while (n > 0)
+	while (n > 0 && *s1 != c)
 	{
 		*d1++ = *s1++;
 		n--;
+		if (*s1 == c)
+			return (d1);
 	}
-	return (dst);
+	return (NULL);
 }	
