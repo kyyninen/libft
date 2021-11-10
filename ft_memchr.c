@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 10:42:12 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/10 11:34:59 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/11/10 13:25:48 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/11/10 13:46:14 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	void	*s1;
 
-	i = 0;
-	if (!dst || !src)
-		return (dst);
-	while (i < n)
+	s1  = (void *) s;
+	if (!s1)
+		return (s1);
+	while (n)
 	{
-		*(char *)(dst + i) = *(char *)(src + i);
-		i++;
+		if (*(char *)s1 == c)
+			return (s1);
+		s1++;
+		n--;
 	}
-	return (dst);
-}	
+	return (0);
+}

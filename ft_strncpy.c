@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 10:42:12 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/10 11:34:59 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/11/10 13:00:33 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/11/10 13:10:14 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	size_t	i;
-
-	i = 0;
-	if (!dst || !src)
-		return (dst);
-	while (i < n)
+	while(*src && len)
 	{
-		*(char *)(dst + i) = *(char *)(src + i);
-		i++;
+		*dst++ = *src++;
+		len--;
 	}
 	return (dst);
-}	
+}
