@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 19:30:08 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/10 13:00:18 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/11 13:25:47 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ char	*ft_strcpy(char *dst, const char *src)
 	int	i;
 
 	i = 0;
-	while(src[i])
+	while (src[i])
 	{
 		dst[i] = src[i];
 		i++;

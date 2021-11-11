@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:51:57 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/09 18:43:42 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/11 18:40:50 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	total = ft_strlen(src) + dstlen;
 	dst += dstlen;
 	wrote = 0;
-	while(*src && wrote < dstsize - dstlen - 1)
+	while (*src && wrote < dstsize - dstlen - 1)
 	{
 		*dst++ = *src++;
 		wrote++;
 	}
-	*dst = '\0';
+	if (dstsize > 0)
+		*dst = '\0';
 	return (total);
 }

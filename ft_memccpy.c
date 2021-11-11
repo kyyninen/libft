@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:42:12 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/10 18:48:34 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/11 12:57:27 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	{
 		*d1++ = *s1++;
 		n--;
-		if (*s1 == c)
-			return (d1);
+	}
+	if (*s1 == c)
+	{
+		*d1 = *s1;
+		return (d1);
 	}
 	return (NULL);
 }	

@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 14:18:44 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/11 16:40:22 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/11 17:50:50 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,25 @@
 
 static int	ft_isspace(char c)
 {
-	return (c > 6 && c < 14);
+	return (c == 32 || (c > 8 && c < 14));
 }
 
-int	atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int		n;
 	int		sign;
 
 	n = 0;
+	sign = 1;
 	while (ft_isspace(*nptr))
 		nptr++;
-	if (*nptr == '-' && *nptr == '+')
+	if (*nptr == '-' || *nptr == '+')
 	{
 		if (*nptr == '-')
-			sign = 1;
-		else
-			sign = 0;
+			sign = -1;
 		nptr++;
 	}
-	if (sign && ft_isdigit(*nptr))
-		n = -(*nptr++ - '0');
 	while (ft_isdigit(*nptr))
-		n = (10 * n) + (*nptr++ - '0');
+		n = (10 * n) + (sign * (*nptr++ - '0'));
 	return (n);
 }
