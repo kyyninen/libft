@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/30 21:17:09 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/12 15:58:12 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/11/12 15:43:45 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/11/12 16:09:53 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strnew(size_t len)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	char	*str;
+	t_list	*head;
+	t_list	*h1;
 
-	str = (char *) malloc(sizeof(char) * (len + 1));
-	if (str)
-		ft_bzero(str, sizeof(char) * (len + 1));
-	return (str);
-}
+	head = ft_lstnew(lst->content, lst->content_size);
+	if (!head)
+		return (NULL);
+	h1 = head;
+	while (lst->next)
+} work in progress*/
