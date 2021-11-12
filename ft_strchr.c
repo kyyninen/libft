@@ -6,11 +6,11 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 14:56:19 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/10 15:00:37 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/12 19:17:16 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
