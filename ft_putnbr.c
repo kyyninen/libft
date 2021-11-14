@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:56:00 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/03 16:57:23 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/14 17:36:53 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putnbr(int n)
 {
-	ft_putstr(ft_itoa(n));
+	ft_putnbr_fd(n, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:52:13 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/02 15:26:39 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/14 17:27:38 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strmap(char const *s, char (*f) (char))
 
 	len = ft_strlen(s);
 	s2 = (char *) malloc(sizeof(char) * (len + 1));
+	if (!s2)
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{

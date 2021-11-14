@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 19:28:24 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/08 19:43:05 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/14 18:07:20 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 		s1[i++] = *s2++;
 		n--;
 	}
+	s1[i] = '\0';
 	return (s1);
 }

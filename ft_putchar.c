@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 18:57:45 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/14 17:24:30 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/14 17:33:20 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	unsigned char	*c1;
+
+	c1 = (unsigned char*) &c;
+	write(1, c1, 1);
 }

@@ -6,20 +6,23 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 11:34:50 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/10/27 16:35:00 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/14 17:29:44 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
+	unsigned char	*a1;
+	unsigned char	*a2;
 
-	i = 0;
-	while (s1[i] || s2[i])
+	a1 = (unsigned char *) s1;
+	a2 = (unsigned char *) s2;
+	while (*a1 || *a2)
 	{
-		if (s1[i] - s2[i] != 0)
-			return (s1[i] - s2[i]);
-		i++;
+		if (*a1 - *a2 != 0)
+			return (*a1 - *a2);
+		a1++;
+		a2++;
 	}
 	return (0);
 }
