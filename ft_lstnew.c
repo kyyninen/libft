@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 10:55:52 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/12 13:42:49 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/15 18:16:02 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	void	*c1;
 
 	l1 = (t_list *) ft_memalloc(sizeof(t_list));
+	if (!l1)
+		return (NULL);
 	if (content == NULL)
 	{
 		l1->content = NULL;

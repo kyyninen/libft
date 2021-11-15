@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 16:40:43 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/02 18:39:44 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/15 19:00:40 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	count_words(char const *s, char c)
 	return (count + 1);
 }
 
-static size_t	word_len(char const *s, char c)
+static size_t	wordlen(char const *s, char c)
 {
 	size_t	len;
 
@@ -37,6 +37,17 @@ static size_t	word_len(char const *s, char c)
 	while (s[len] && s[len] != c)
 		len++;
 	return (len);
+}
+
+static void	free_str_arr(char ***words)
+{
+	char	**arr;
+
+	arr = *words;
+	while (**arr)
+		free(*arr++);
+	free(*arr);
+	free(*words);
 }
 
 char	**ft_strsplit(char const *s, char c)
@@ -58,8 +69,13 @@ char	**ft_strsplit(char const *s, char c)
 	{
 		while (*s == c)
 			s++;
-		len = word_len(s, c);
+		len = wordlen(s, c);
 		words[i++] = ft_strsub(s, 0, len);
+		if (!words[i - 1])
+		{
+			free_str_arr(&words);
+			return (NULL);
+		}
 		s += len;
 		count--;
 	}

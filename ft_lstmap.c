@@ -6,12 +6,20 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 15:43:45 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/12 18:09:02 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/15 18:17:35 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+
+static void	ft_lstfree(t_list **lst)
+{
+	if ((*lst)->next != NULL)
+		ft_lstfree(&(*lst)->next);
+	free((*lst)->content);
+	free(*lst);
+}
 
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
@@ -27,7 +35,10 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	{
 		h1->next = f(lst);
 		if (!h1->next)
+		{
+			ft_lstfree(&head);
 			return (NULL);
+		}
 		lst = lst->next;
 		h1 = h1->next;
 	}
