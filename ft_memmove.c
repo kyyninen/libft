@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 18:29:37 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/14 16:01:32 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/15 11:41:33 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*d;
 	char	*s;
 
-	if (!len)
+	if (!len || dst == src)
 		return (dst);
 	d = (char *) dst;
 	s = (char *) src;

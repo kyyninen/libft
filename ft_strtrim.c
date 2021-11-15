@@ -6,40 +6,35 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:31:17 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/02 15:55:06 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/15 13:08:58 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static unsigned int	skip_whitespace(char const *s, int dir)
+static int	ft_isspace(char c)
 {
-	int	i;
-
-	if (dir == -1)
-		i = ft_strlen(s) - 1;
+	if (c == ' ' || c == '\t' || c == '\n')
+		return (1);
 	else
-		i = 0;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-	{
-		i += dir;
-		if (i == 0)
-			return (ft_strlen(s - 1));
-		if (s[i] == '\0')
-			return (0);
-	}
-	return (i);
+		return (0);
 }
 
 char	*ft_strtrim(char const *s)
 {
-	unsigned int	start;
-	size_t			len;
-	char			*str;
+	size_t	start;
+	size_t	end;
+	char	*str;
 
-	start = skip_whitespace(s, 1);
-	len = skip_whitespace(s, -1) - start + 1;
-	str = ft_strsub(s, start, len);
+	start = 0;
+	end = ft_strlen(s) - 1;
+	while (*(s + start) && ft_isspace(*(s + start)))
+		start++;
+	if (*(s + start) == '\0')
+		return (ft_strnew(0));
+	while ((s + end) > (s + start) && ft_isspace(*(s + end)))
+		end--;
+	str = ft_strsub(s, start, end - start + 1);
 	return (str);
 }
