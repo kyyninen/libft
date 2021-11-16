@@ -6,20 +6,11 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:31:17 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/15 13:08:58 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/16 16:04:08 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-
-static int	ft_isspace(char c)
-{
-	if (c == ' ' || c == '\t' || c == '\n')
-		return (1);
-	else
-		return (0);
-}
 
 char	*ft_strtrim(char const *s)
 {

@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 15:45:18 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/14 16:03:27 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/16 17:07:25 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ char	*ft_strrchr(const char *s, int c)
 			return (s1);
 		s1--;
 	}
-	return (0);
+	return (NULL);
 }

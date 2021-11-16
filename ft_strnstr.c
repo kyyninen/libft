@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 19:26:44 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/11 20:16:49 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/16 17:06:22 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			h1 = (char *) haystack;
 			n1 = (char *) needle;
 			while (*h1++ == *n1++ && h1 <= stop)
-			{
 				if (*n1 == '\0')
 					return ((char *) haystack);
-			}
 		}
 		haystack++;
 	}

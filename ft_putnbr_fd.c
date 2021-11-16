@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:31:37 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/14 17:47:19 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/16 16:32:30 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_putnbr_fd(int nb, int fd)
 		x = -x;
 	}
 	if (x > 9)
-		ft_putnbr(x / 10);
+		ft_putnbr_fd(x / 10, fd);
 	c = (x % 10) + '0';
-	ft_putchar(c);
+	ft_putchar_fd(c, fd);
 }

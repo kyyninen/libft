@@ -6,7 +6,7 @@
 #    By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 19:01:12 by tpolonen          #+#    #+#              #
-#    Updated: 2021/11/12 19:22:59 by tpolonen         ###   ########.fr        #
+#    Updated: 2021/11/16 20:04:33 by tpolonen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,20 +15,26 @@ CFLAGS = -c -Wall -Wextra -Werror
 ARFLAGS = rc
 NAME = libft.a
 
-FILES := ft_atoi.c
+FILES := ft_abs.c
+FILES += ft_atoi.c
 FILES += ft_bzero.c
 FILES += ft_isalnum.c
 FILES += ft_isalpha.c
 FILES += ft_isascii.c
 FILES += ft_isdigit.c
+FILES += ft_islower.c
+FILES += ft_isspace.c
 FILES += ft_isprint.c
+FILES += ft_isupper.c
 FILES += ft_itoa.c
 FILES += ft_lstadd.c
 FILES += ft_lstdel.c
 FILES += ft_lstdelone.c
+FILES += ft_lstfree.c
 FILES += ft_lstiter.c
 FILES += ft_lstmap.c
 FILES += ft_lstnew.c
+FILES += ft_max.c
 FILES += ft_memalloc.c
 FILES += ft_memccpy.c
 FILES += ft_memchr.c

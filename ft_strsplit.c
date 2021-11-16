@@ -6,79 +6,84 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 16:40:43 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/15 19:00:40 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/16 20:01:12 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+#include <string.h>
 
 static int	count_words(char const *s, char c)
 {
 	int	count;
 
 	count = 0;
-	while (*s == c)
-		s++;
 	while (*s)
 	{
-		if (*s == c && *(s + 1) != c && *(s + 1) != '\0')
+		while (*s == c && *s)
+			s++;
+		if (*s)
 			count++;
-		s++;
+		while (*s != c && *s)
+			s++;
 	}
-	return (count + 1);
+	return (ft_max(1, count));
 }
 
-static size_t	wordlen(char const *s, char c)
+static void	free_str_tab(char ***tab, int count)
 {
-	size_t	len;
+	int	i;
 
-	len = 0;
-	while (s[len] && s[len] != c)
-		len++;
-	return (len);
+	i = 0;
+	while (i < count)
+		free(*tab[i++]);
+	free(*tab);
 }
 
-static void	free_str_arr(char ***words)
+static int	cut_word(char const *s, char c, char **tab, int i)
 {
-	char	**arr;
+	char const	*stop;
+	char		*word;
 
-	arr = *words;
-	while (**arr)
-		free(*arr++);
-	free(*arr);
-	free(*words);
+	stop = ft_strchr(s, c);
+	if (stop == NULL)
+		stop = s + ft_strlen(s);
+	word = ft_strsub(s, 0, stop - s);
+	if (!word)
+	{
+		free_str_tab(&tab, i);
+		return (0);
+	}
+	tab[i] = word;
+	return (1);
 }
 
 char	**ft_strsplit(char const *s, char c)
 {
 	int		count;
 	int		i;
-	size_t	len;
 	char	**words;
 
-	if (*s == '\0')
-		count = 0;
-	else
-		count = count_words(s, c);
-	words = (char **) malloc(sizeof(char *) * (count + 1));
+	count = count_words(s, c);
+	words = (char **) malloc(sizeof(char *) * count);
 	if (!words)
 		return (NULL);
 	i = 0;
-	while (count > 0)
+	while (s != NULL && *s)
 	{
-		while (*s == c)
+		while (*s == c && *s)
 			s++;
-		len = wordlen(s, c);
-		words[i++] = ft_strsub(s, 0, len);
-		if (!words[i - 1])
+		if (s != NULL && *s)
 		{
-			free_str_arr(&words);
-			return (NULL);
+			if (!cut_word(s, c, words, i))
+				return (NULL);
+			i++;
+			count--;
+			s = ft_strchr(s, c);
 		}
-		s += len;
-		count--;
 	}
-	words[i] = ft_strnew(1);
+	if (count == 1)
+		words[i] = ft_strnew(0);
 	return (words);
 }

@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 13:25:48 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/14 16:04:28 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/16 16:22:16 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		s1++;
 		n--;
 	}
-	return (0);
+	return (NULL);
 }

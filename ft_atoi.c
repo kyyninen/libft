@@ -6,16 +6,11 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 14:18:44 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/11 17:50:50 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/16 15:55:09 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_isspace(char c)
-{
-	return (c == 32 || (c > 8 && c < 14));
-}
 
 int	ft_atoi(const char *nptr)
 {
