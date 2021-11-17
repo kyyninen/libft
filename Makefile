@@ -6,7 +6,7 @@
 #    By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 19:01:12 by tpolonen          #+#    #+#              #
-#    Updated: 2021/11/17 14:31:30 by tpolonen         ###   ########.fr        #
+#    Updated: 2021/11/17 16:08:36 by tpolonen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,7 @@ FILES += ft_striter.c
 FILES += ft_striteri.c
 FILES += ft_strjoin.c
 FILES += ft_strlcat.c
+FILES += ft_strlcpy.c
 FILES += ft_strlen.c
 FILES += ft_strmap.c
 FILES += ft_strmapi.c

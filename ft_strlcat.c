@@ -6,19 +6,20 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:51:57 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/15 18:20:38 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/17 16:10:36 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char	*d;
-	char	*s;
+	char		*d;
+	const char	*s;
 
 	d = dst;
-	s = (char *) src;
+	s = src;
 	while (*d)
 	{
 		if (dstsize == 0)

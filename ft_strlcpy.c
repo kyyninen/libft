@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/30 18:57:45 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/17 15:56:17 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/11/17 16:04:13 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/11/17 16:10:50 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
+#include <string.h>
 
-void	ft_putchar(char c)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	write(1, &c, 1);
+	char		*d;
+	const char	*s;
+
+	d = dst;
+	s = src;
+	while (*s && dstsize > 1)
+	{
+		*d++ = *s++;
+		dstsize--;
+	}
+	if (dstsize > 0)
+		*d = '\0';
+	return (d - dst + ft_strlen(s));
 }
