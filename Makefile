@@ -6,7 +6,7 @@
 #    By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 19:01:12 by tpolonen          #+#    #+#              #
-#    Updated: 2021/11/16 20:04:33 by tpolonen         ###   ########.fr        #
+#    Updated: 2021/11/17 14:31:30 by tpolonen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ FILES += ft_itoa.c
 FILES += ft_lstadd.c
 FILES += ft_lstdel.c
 FILES += ft_lstdelone.c
-FILES += ft_lstfree.c
 FILES += ft_lstiter.c
 FILES += ft_lstmap.c
 FILES += ft_lstnew.c

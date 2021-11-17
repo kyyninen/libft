@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 16:40:43 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/16 20:01:12 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/17 14:24:53 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ static int	count_words(char const *s, char c)
 		while (*s != c && *s)
 			s++;
 	}
-	return (ft_max(1, count));
+	return (count);
 }
 
-static void	free_str_tab(char ***tab, int count)
+static int	free_str_tab(char ***tab, int count)
 {
 	int	i;
 
@@ -39,6 +39,7 @@ static void	free_str_tab(char ***tab, int count)
 	while (i < count)
 		free(*tab[i++]);
 	free(*tab);
+	return (0);
 }
 
 static int	cut_word(char const *s, char c, char **tab, int i)
@@ -51,10 +52,7 @@ static int	cut_word(char const *s, char c, char **tab, int i)
 		stop = s + ft_strlen(s);
 	word = ft_strsub(s, 0, stop - s);
 	if (!word)
-	{
-		free_str_tab(&tab, i);
-		return (0);
-	}
+		return (free_str_tab(&tab, i));
 	tab[i] = word;
 	return (1);
 }
@@ -66,7 +64,7 @@ char	**ft_strsplit(char const *s, char c)
 	char	**words;
 
 	count = count_words(s, c);
-	words = (char **) malloc(sizeof(char *) * count);
+	words = (char **) malloc(sizeof(char *) * (count + 1));
 	if (!words)
 		return (NULL);
 	i = 0;
@@ -74,7 +72,7 @@ char	**ft_strsplit(char const *s, char c)
 	{
 		while (*s == c && *s)
 			s++;
-		if (s != NULL && *s)
+		if (*s)
 		{
 			if (!cut_word(s, c, words, i))
 				return (NULL);
@@ -83,7 +81,6 @@ char	**ft_strsplit(char const *s, char c)
 			s = ft_strchr(s, c);
 		}
 	}
-	if (count == 1)
-		words[i] = ft_strnew(0);
+	words[i] = 0;
 	return (words);
 }
