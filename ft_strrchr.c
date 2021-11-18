@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 15:45:18 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/16 17:07:25 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/18 16:33:04 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*s1;
+	const char	*s1;
 
-	s1 = (char *) s;
+	s1 =  s;
 	s1 += (ft_strlen(s));
 	while (s1 >= s)
 	{
 		if (*s1 == c)
-			return (s1);
+			return ((char *) s1);
 		s1--;
 	}
 	return (NULL);

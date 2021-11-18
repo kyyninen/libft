@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 19:26:44 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/16 17:06:22 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/18 16:31:42 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	stop = (char *) haystack + len;
 	while (*haystack && haystack < stop)
 	{
-		while (*haystack != *needle && *haystack && haystack < stop)
+		while (*haystack != *needle && *haystack)
 			haystack++;
 		if (*haystack == *needle)
 		{

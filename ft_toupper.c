@@ -6,14 +6,11 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:37:48 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/05 16:02:43 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/18 16:43:44 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_islower(int c)
-{
-	return (c > 96 && c < 123);
-}
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

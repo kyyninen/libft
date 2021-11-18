@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 16:40:43 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/17 14:24:53 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/18 16:34:53 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,10 @@ static int	cut_word(char const *s, char c, char **tab, int i)
 
 char	**ft_strsplit(char const *s, char c)
 {
-	int		count;
 	int		i;
 	char	**words;
 
-	count = count_words(s, c);
-	words = (char **) malloc(sizeof(char *) * (count + 1));
+	words = (char **) malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!words)
 		return (NULL);
 	i = 0;
@@ -77,7 +75,6 @@ char	**ft_strsplit(char const *s, char c)
 			if (!cut_word(s, c, words, i))
 				return (NULL);
 			i++;
-			count--;
 			s = ft_strchr(s, c);
 		}
 	}
