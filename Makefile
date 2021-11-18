@@ -6,7 +6,7 @@
 #    By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 19:01:12 by tpolonen          #+#    #+#              #
-#    Updated: 2021/11/17 16:08:36 by tpolonen         ###   ########.fr        #
+#    Updated: 2021/11/18 15:34:39 by tpolonen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ FILES += ft_isprint.c
 FILES += ft_isupper.c
 FILES += ft_itoa.c
 FILES += ft_lstadd.c
+FILES += ft_lstadd_back.c
 FILES += ft_lstdel.c
 FILES += ft_lstdelone.c
 FILES += ft_lstiter.c

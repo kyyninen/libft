@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test_ft_strlcpy.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/18 15:45:25 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/11/18 16:00:14 by tpolonen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+#include <string.h>
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("testing with large dstsize\n");
+	char dst1[42] = "Don't Panic!", dst2[42] = "Don't Panic!";
+	size_t libc, libft;
+
+	libc = strlcpy(dst1, "fortytwo", 42);
+	libft = ft_strlcpy(dst2, "fortytwo", 42);
+
+	if (libc != libft || strcmp(dst1, dst2) != 0)
+	{
+		printf("failed! got %zu, expected %zu\n", libft, libc);
+		printf("libc:\t[%s]\nlibft:\t[%s]\n", dst1, dst2);
+	}
+	printf("testing with small dstsize\n");
+	char dst3[50] = "aaa", dst4[50] = "bbb";
+	libc = strlcpy(dst3, "fortytwo", strlen(dst3) + 1);
+	libft = ft_strlcpy(dst4, "fortytwo", strlen(dst4) + 1);
+	if (libc != libft || strcmp(dst3, dst4) != 0)
+	{
+		printf("failed! got %zu, expected %zu\n", libft, libc);
+		printf("libc:\t[%s]\nlibft:\t[%s]\n", dst3, dst4);
+	}
+	return (0);
+}
