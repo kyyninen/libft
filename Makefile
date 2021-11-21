@@ -6,7 +6,7 @@
 #    By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 19:01:12 by tpolonen          #+#    #+#              #
-#    Updated: 2021/11/19 13:45:42 by tpolonen         ###   ########.fr        #
+#    Updated: 2021/11/21 17:23:10 by tpolonen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ NAME = libft.a
 FILES := ft_abs.c
 FILES += ft_atoi.c
 FILES += ft_bzero.c
+FILES += ft_intlen.c
 FILES += ft_isalnum.c
 FILES += ft_isalpha.c
 FILES += ft_isascii.c
