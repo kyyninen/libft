@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 10:49:02 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/21 16:34:04 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/21 18:00:41 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	str[len--] = '\0';
 	if (n == 0)
-		str[len--] = '0';
+		str[len] = '0';
 	while (n != 0)
 	{
 		str[len--] = '0' + (ft_abs(n % 10));
