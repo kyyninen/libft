@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 10:49:02 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/21 16:34:04 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/11/21 16:33:18 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/11/21 16:36:23 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_itoa(int n)
+int	ft_intlen(int n, int base)
 {
-	int		sign;
-	int		len;
-	char	*str;
+	int	len;
 
+	len = 0;
 	if (n < 0)
-		sign = 1;
-	else
-		sign = 0;
-	len = ft_intlen(n, 10);
-	str = (char *) malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	str[len--] = '\0';
-	if (n == 0)
-		str[len--] = '0';
+		len++;
 	while (n != 0)
 	{
-		str[len--] = '0' + (ft_abs(n % 10));
-		n /= 10;
+		n /= base;
+		len++;
 	}
-	if (sign)
-		str[len] = '-';
-	return (str);
+	return (ft_max(1, len));
 }

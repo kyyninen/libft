@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 17:26:45 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/18 14:49:13 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/21 16:34:31 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
+int		ft_intlen(int n, int base);
 void	ft_putchar(char c);
 void	ft_putstr(char const *str);
 void	ft_putendl(char const *str);
