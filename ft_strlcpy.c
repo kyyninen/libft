@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:04:13 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/17 16:10:50 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/23 19:14:28 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	if (dstsize > 0)
 		*d = '\0';
-	return (d - dst + ft_strlen(s));
+	return ((size_t)(d - dst) + ft_strlen(s));
 }

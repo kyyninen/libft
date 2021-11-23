@@ -6,18 +6,15 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:24:14 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/02 15:26:07 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/23 19:23:09 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_strequ(char const *s1, char const *s2)
 {
-	while (*s1 == *s2)
-	{
-		s1++;
-		s2++;
-		if (*s1 == '\0' && *s2 == '\0')
-			return (1);
-	}
+	if (ft_strcmp(s1, s2) == 0)
+		return (1);
 	return (0);
 }

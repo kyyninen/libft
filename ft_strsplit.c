@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 16:40:43 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/18 16:34:53 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/23 19:15:47 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-static int	count_words(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
 	while (*s)
@@ -50,7 +50,7 @@ static int	cut_word(char const *s, char c, char **tab, int i)
 	stop = ft_strchr(s, c);
 	if (stop == NULL)
 		stop = s + ft_strlen(s);
-	word = ft_strsub(s, 0, stop - s);
+	word = ft_strsub(s, 0, (size_t)(stop - s));
 	if (!word)
 		return (free_str_tab(&tab, i));
 	tab[i] = word;
