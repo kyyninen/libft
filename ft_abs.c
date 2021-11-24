@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 16:00:08 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/16 16:00:56 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/24 17:21:08 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@ int	ft_abs(int n)
 {
 	if (n < 0)
 		return (-n);
-	else
-		return (n);
+	return (n);
 }

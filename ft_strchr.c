@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 14:56:19 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/16 17:50:07 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/24 17:16:35 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s && *s != c)
+	while (*s && *s != (char) c)
 		s++;
-	if (*s == c)
+	if (*s == (char) c)
 		return ((char *) s);
 	else
 		return (NULL);

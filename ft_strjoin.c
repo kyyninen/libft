@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 12:54:59 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/02 13:15:32 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/24 18:09:04 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str = (char *) malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	while (*s1)
-		*str++ = *s1++;
-	while (*s2)
-		*str++ = *s2++;
-	*str = '\0';
-	str -= len;
+	ft_strcpy(str + ft_strlcpy(str, s1, len + 1), s2);
 	return (str);
 }

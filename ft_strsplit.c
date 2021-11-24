@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 16:40:43 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/23 19:15:47 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/24 18:30:05 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,6 @@ char	**ft_strsplit(char const *s, char c)
 			s = ft_strchr(s, c);
 		}
 	}
-	words[i] = 0;
+	words[i] = NULL;
 	return (words);
 }

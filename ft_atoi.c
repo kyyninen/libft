@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 14:18:44 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/21 15:04:51 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/24 17:22:30 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	ft_signtest(long a, long b)
 	return (0);
 }
 
-static long	ft_maxlong(long n)
+static long	ft_maxlong(int n)
 {
 	if (n < 0)
 		return (-9223372036854775807LL - 1LL);
@@ -34,7 +34,7 @@ static long	ft_maxlong(long n)
 int	ft_atoi(const char *nptr)
 {
 	long	n;
-	long	sign;
+	int		sign;
 
 	n = 0;
 	sign = 1;
@@ -48,8 +48,8 @@ int	ft_atoi(const char *nptr)
 	}
 	while (ft_isdigit(*nptr))
 	{
-		n = (10 * n) + (sign * (*nptr++ - '0'));
-		if (!ft_signtest(n, sign))
+		n = (10 * n) + ((long) sign * (*nptr++ - '0'));
+		if (!ft_signtest(n, (long) sign))
 			return ((int) ft_maxlong(sign));
 	}
 	return ((int) n);

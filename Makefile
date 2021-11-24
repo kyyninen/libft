@@ -6,7 +6,7 @@
 #    By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 19:01:12 by tpolonen          #+#    #+#              #
-#    Updated: 2021/11/23 20:35:18 by tpolonen         ###   ########.fr        #
+#    Updated: 2021/11/24 17:11:32 by tpolonen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,7 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(OBJ):
+$(OBJ): $(FILES)
 	$(CC) $(CFLAGS) $(SRC)
 
 $(NAME): $(OBJ)
