@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:31:17 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/23 19:16:36 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/24 14:39:53 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strtrim(char const *s)
 		start++;
 	if (*(s + start) == '\0')
 		return (ft_strnew(0));
-	while ((s + end) > (s + start) && ft_isspace(*(s + end)))
+	while ((s + end) > (s + start) && ft_iswtspc(*(s + end)))
 		end--;
 	str = ft_strsub(s, start, end - start + 1);
 	return (str);
