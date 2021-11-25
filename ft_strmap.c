@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:52:13 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/24 18:22:19 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/25 11:53:24 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ char	*ft_strmap(char const *s, char (*f) (char))
 	if (!s2)
 		return (NULL);
 	s2[len] = '\0';
-	while (--len != 0)
+	while (len-- > 0)
 		s2[len] = f(s[len]);
-	s2[len] = f(s[len]);
 	return (s2);
 }
