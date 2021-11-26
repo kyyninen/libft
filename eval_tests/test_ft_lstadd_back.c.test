@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 15:33:38 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/18 15:36:48 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/11/26 14:02:23 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		main(void)
 	seek = head;
 	while (seek != NULL)
 	{
-		printf("[%s]", seek->content);
+		printf("[%s]", (char *) seek->content);
 		seek = seek->next;
 		if (seek != NULL)
 			printf(" ");
