@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 17:26:45 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/23 19:42:05 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/03 18:41:50 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,17 @@ typedef struct s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct s_dstr
+{
+	char			*str;
+	size_t			alloced;
+	size_t			len;
+}				t_dstr;
+
+/*
+ * Libc functions
+ */
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -55,6 +66,11 @@ int		ft_isupper(int c);
 int		ft_islower(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+
+/*
+ * Additional functions
+ */
+
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);
@@ -80,6 +96,11 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *str, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+/*
+ * List functions
+ */
+
 t_list	*ft_lstnew(void const *content, size_t content_size);
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
@@ -87,4 +108,13 @@ void	ft_lstadd(t_list **alst, t_list *new);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+/*
+ * Dynamic string functions
+ */
+
+t_dstr	*ft_dstrnew(const char *str, size_t len);
+void	ft_dstradd(t_dstr *ds, const char *str, size_t len);
+char	*ft_dstrdrop(t_dstr *ds);
+void	ft_dstrfree(t_dstr *ds);
 #endif
