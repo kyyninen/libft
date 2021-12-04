@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 17:26:45 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/03 18:41:50 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/04 17:10:27 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,4 +117,5 @@ t_dstr	*ft_dstrnew(const char *str, size_t len);
 void	ft_dstradd(t_dstr *ds, const char *str, size_t len);
 char	*ft_dstrdrop(t_dstr *ds);
 void	ft_dstrfree(t_dstr *ds);
+t_dstr	*ft_dstrconv(const char *str);
 #endif

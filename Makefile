@@ -6,18 +6,24 @@
 #    By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 19:01:12 by tpolonen          #+#    #+#              #
-#    Updated: 2021/11/24 17:11:32 by tpolonen         ###   ########.fr        #
+#    Updated: 2021/12/04 16:57:56 by tpolonen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -c -Wall -Wextra -Werror
+CFLAGS = -c -Wall -Wextra -Werror -I$(HEADER_DIR)
 ARFLAGS = rc
+HEADER_DIR = ./includes/
 NAME = libft.a
 
 FILES := ft_abs.c
 FILES += ft_atoi.c
 FILES += ft_bzero.c
+FILES += ft_dstradd.c
+FILES += ft_dstrconv.c
+FILES += ft_dstrdrop.c
+FILES += ft_dstrfree.c
+FILES += ft_dstrnew.c
 FILES += ft_intlen.c
 FILES += ft_isalnum.c
 FILES += ft_isalpha.c
@@ -87,7 +93,7 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(OBJ): $(FILES)
+$(OBJ): $(SRC)
 	$(CC) $(CFLAGS) $(SRC)
 
 $(NAME): $(OBJ)
@@ -101,3 +107,5 @@ fclean: clean
 	/bin/rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
