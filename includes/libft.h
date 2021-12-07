@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 17:26:45 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/05 17:15:55 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/07 20:33:03 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
+void	*ft_memrchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t	ft_strlen(char const *str);
 char	*ft_strdup(const char *str);
@@ -96,6 +97,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *str, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_putmem(const char *ptr, size_t count);
 
 /*
  * List functions
@@ -109,6 +111,7 @@ void	ft_lstadd_back(t_list **alst, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 size_t	ft_lstcount(t_list *alst);
+void	ft_lstprint(t_list *elem);
 
 /*
  * Dynamic string functions

@@ -6,7 +6,7 @@
 #    By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 19:01:12 by tpolonen          #+#    #+#              #
-#    Updated: 2021/12/05 17:14:01 by tpolonen         ###   ########.fr        #
+#    Updated: 2021/12/07 20:33:32 by tpolonen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,10 +42,12 @@ FILES += ft_lstdelone.c
 FILES += ft_lstiter.c
 FILES += ft_lstmap.c
 FILES += ft_lstnew.c
+FILES += ft_lstprint.c
 FILES += ft_max.c
 FILES += ft_memalloc.c
 FILES += ft_memccpy.c
 FILES += ft_memchr.c
+FILES += ft_memrchr.c
 FILES += ft_memcmp.c
 FILES += ft_memcpy.c
 FILES += ft_memdel.c
@@ -59,6 +61,7 @@ FILES += ft_putnbr.c
 FILES += ft_putnbr_fd.c
 FILES += ft_putstr.c
 FILES += ft_putstr_fd.c
+FILES += ft_putmem.c
 FILES += ft_strcat.c
 FILES += ft_strchr.c
 FILES += ft_strclr.c
