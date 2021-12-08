@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:16:21 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/03 18:37:59 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/08 19:18:32 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	dstr_ensure_space(t_dstr *ds, size_t add_len)
 	new_size = ds->alloced * 2;
 	while (new_size < ds->len + add_len + 1)
 		new_size *= 2;
-	new_str = ft_strnew(new_size);
+	new_str = (char *) ft_memalloc(new_size);
 	ft_memcpy((void *)new_str, (void *)ds->str, ds->len);
 	ds->alloced = new_size;
 	ft_memdel((void **)&(ds->str));
@@ -35,4 +35,5 @@ void	ft_dstradd(t_dstr *ds, const char *str, size_t len)
 		len = ft_strlen(str);
 	dstr_ensure_space(ds, len);
 	ft_memcpy((void *)str, (void *)ds->str + ds->len, len);
+	ds->str[len] = '\0';
 }
