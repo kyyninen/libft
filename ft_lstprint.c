@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 20:21:00 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/07 20:26:35 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/08 20:14:58 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_lstprint(t_list *elem)
 	ft_putstr(": [");
 	ft_putmem(elem->content, elem->content_size);
 	ft_putstr("] (size=");
-	ft_putnbr(elem->content_size);
+	ft_putnbr((int) elem->content_size);
 	ft_putendl(")");
 	if (elem->next == NULL)
 		i = 0;
