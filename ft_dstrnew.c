@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:08:57 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/04 17:54:22 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/09 18:05:50 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ t_dstr	*ft_dstrnew(const char *str, size_t len)
 	if (!ds)
 		return (ds);
 	str_len = ft_strlen(str);
-	if (len == 0)
-		len = str_len;
-	else if (len < str_len)
+	if (len < str_len)
 		str_len = len;
 	ds->str = ft_strnew(len);
 	if (!ds->str)
@@ -33,6 +31,6 @@ t_dstr	*ft_dstrnew(const char *str, size_t len)
 	}
 	ft_memcpy((void *)ds->str, (void *)str, str_len);
 	ds->alloced = len + 1;
-	ds->len = len;
+	ds->len = str_len;
 	return (ds);
 }

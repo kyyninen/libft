@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:16:21 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/08 19:18:32 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/09 18:06:01 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,8 @@ static void	dstr_ensure_space(t_dstr *ds, size_t add_len)
 
 void	ft_dstradd(t_dstr *ds, const char *str, size_t len)
 {
-	if (len == 0)
-		len = ft_strlen(str);
 	dstr_ensure_space(ds, len);
-	ft_memcpy((void *)str, (void *)ds->str + ds->len, len);
-	ds->str[len] = '\0';
+	ft_memcpy((void *)(ds->str + ds->len), (void *)str, len);
+	ds->str[ds->len + len] = '\0';
+	ds->len += len;
 }
