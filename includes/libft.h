@@ -1,7 +1,6 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                        :::      ::::::::   *//*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -50,6 +49,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+char	*ft_strchrnul(const char *s, int c);
 char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_strcmp(const char *s1, const char *s2);
@@ -121,5 +121,6 @@ t_dstr	*ft_dstrnew(const char *str, size_t len);
 void	ft_dstradd(t_dstr *ds, const char *str, size_t len);
 char	*ft_dstrdrop(t_dstr *ds);
 void	ft_dstrfree(t_dstr *ds);
+char	*ft_dstrbreak(t_dstr *ds);
 t_dstr	*ft_dstrconv(const char *str);
 #endif

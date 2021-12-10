@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strchrnul.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 14:56:19 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/10 15:25:07 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/12/10 15:21:17 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/12/10 15:22:35 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchrnul(const char *s, int c)
 {
 	while (*s && *s != (char) c)
 		s++;
-	if (*s == (char) c)
-		return ((char *) s);
-	else
-		return (NULL);
+	return ((char *) s);
 }

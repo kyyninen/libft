@@ -6,7 +6,7 @@
 #    By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 19:01:12 by tpolonen          #+#    #+#              #
-#    Updated: 2021/12/09 18:00:34 by tpolonen         ###   ########.fr        #
+#    Updated: 2021/12/10 15:43:11 by tpolonen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ FILES := ft_abs.c
 FILES += ft_atoi.c
 FILES += ft_bzero.c
 FILES += ft_dstradd.c
+FILES += ft_dstrbreak.c
 FILES += ft_dstrconv.c
 FILES += ft_dstrdrop.c
 FILES += ft_dstrfree.c
@@ -64,6 +65,7 @@ FILES += ft_putstr_fd.c
 FILES += ft_putmem.c
 FILES += ft_strcat.c
 FILES += ft_strchr.c
+FILES += ft_strchrnul.c
 FILES += ft_strclr.c
 FILES += ft_strcmp.c
 FILES += ft_strcpy.c
