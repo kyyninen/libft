@@ -1,17 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   *//*   libft.h                                            :+:      :+:    :+:   */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 17:26:45 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/07 20:33:03 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/12/13 14:07:36 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/12/13 14:10:56 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -118,7 +121,7 @@ void	ft_lstprint(t_list *elem);
  */
 
 t_dstr	*ft_dstrnew(const char *str, size_t len);
-void	ft_dstradd(t_dstr *ds, const char *str, size_t len);
+ssize_t	ft_dstradd(t_dstr *ds, const char *str, size_t len);
 char	*ft_dstrdrop(t_dstr *ds);
 void	ft_dstrfree(t_dstr *ds);
 char	*ft_dstrbreak(t_dstr *ds);

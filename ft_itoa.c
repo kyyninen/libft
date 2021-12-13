@@ -6,13 +6,11 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 10:49:02 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/24 17:27:27 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/13 14:11:05 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdlib.h>
 
 char	*ft_itoa(int n)
 {

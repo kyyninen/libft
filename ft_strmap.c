@@ -6,12 +6,11 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:52:13 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/25 11:53:24 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/13 14:17:18 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strmap(char const *s, char (*f) (char))
 {

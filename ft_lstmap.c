@@ -6,12 +6,11 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 15:43:45 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/24 17:33:05 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/13 14:11:39 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static void	ft_freecontent(void *content, size_t size)
 {

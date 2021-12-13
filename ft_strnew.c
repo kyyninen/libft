@@ -6,12 +6,11 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 21:17:09 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/12 15:58:12 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/13 14:17:59 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strnew(size_t len)
 {

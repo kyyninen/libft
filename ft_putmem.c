@@ -6,11 +6,11 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 20:27:40 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/07 20:32:24 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/13 14:15:48 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putmem(const char *ptr, size_t count)
 {

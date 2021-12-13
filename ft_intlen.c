@@ -6,12 +6,11 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 16:33:18 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/23 18:04:53 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/13 14:10:17 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 size_t	ft_intlen(int n, int base)
 {

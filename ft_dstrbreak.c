@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 15:39:48 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/10 15:42:44 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/13 14:09:48 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ char	*ft_dstrbreak(t_dstr *ds)
 	char	*new_str;
 	
 	new_str = ft_strnew(ds->len);
-	ft_memcpy(new_str, ds->str, ds->len);
-	ft_dstrfree(ds);
+	if (new_str)
+	{
+		ft_memcpy(new_str, ds->str, ds->len);
+		ft_dstrfree(ds);
+	}
 	return (new_str);
 }
