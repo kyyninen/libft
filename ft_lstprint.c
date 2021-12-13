@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 20:21:00 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/08 20:14:58 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/13 14:25:41 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_lstprint(t_list *elem)
 {
 	static int	i;
+
 	if (!elem)
 	{
 		ft_putendl("Null list");

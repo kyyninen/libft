@@ -6,19 +6,19 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:16:21 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/13 14:06:49 by tpolonen         ###   ########.fr       */
+/*   Updated: 2021/12/13 14:24:43 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static ssize_t dstr_ensure_space(t_dstr *ds, size_t add_len)
+static ssize_t	dstr_ensure_space(t_dstr *ds, size_t add_len)
 {
 	size_t	new_size;
 	char	*new_str;
 
 	if (ds->alloced > ds->len + add_len + 1)
-		return (ds->alloced) ;
+		return (ds->alloced);
 	new_size = ds->alloced;
 	while (new_size < ds->len + add_len + 1)
 	{
