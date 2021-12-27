@@ -6,25 +6,21 @@
 #    By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 19:01:12 by tpolonen          #+#    #+#              #
-#    Updated: 2021/12/10 15:43:11 by tpolonen         ###   ########.fr        #
+#    Updated: 2021/12/27 16:30:52 by tpolonen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -g -c -Wall -Wextra -Werror -I$(HEADER_DIR)
+CFLAGS = -c -Wall -Wextra -Werror -I $(HEADER_DIR)
+HEADER_DIR = includes/
 ARFLAGS = rc
-HEADER_DIR = ./includes/
 NAME = libft.a
 
 FILES := ft_abs.c
 FILES += ft_atoi.c
 FILES += ft_bzero.c
-FILES += ft_dstradd.c
-FILES += ft_dstrbreak.c
-FILES += ft_dstrconv.c
-FILES += ft_dstrdrop.c
-FILES += ft_dstrfree.c
-FILES += ft_dstrnew.c
+FILES += ft_dstrbuild.c
+FILES += ft_dstrclose.c
 FILES += ft_intlen.c
 FILES += ft_isalnum.c
 FILES += ft_isalpha.c
