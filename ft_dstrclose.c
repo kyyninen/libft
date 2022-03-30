@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint.c                                      :+:      :+:    :+:   */
+/*   ft_dstrclose.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 20:21:00 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/13 14:25:41 by tpolonen         ###   ########.fr       */
+/*   Created: 2021/12/27 16:28:19 by tpolonen          #+#    #+#             */
+/*   Updated: 2021/12/27 16:29:05 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstprint(t_list *elem)
+int	ft_dstrclose(t_dstr **ds, char **target)
 {
-	static int	i;
+	int	ret;
 
-	if (!elem)
+	ret = 0;
+	if (*ds == NULL)
+		return (ret);
+	if (target != NULL)
 	{
-		ft_putendl("Null list");
-		return ;
+		ret = 1;
+		if ((*ds)->alloced == (*ds)->len + 1)
+			*target = (*ds)->str;
+		else
+		{
+			*target = ft_strnew((*ds)->len);
+			if (target)
+				ft_memcpy(*target, (*ds)->str, (*ds)->len);
+			else
+				ret = -1;
+			free((*ds)->str);
+		}
 	}
-	ft_putchar('#');
-	ft_putnbr(++i);
-	ft_putstr(": [");
-	ft_putmem(elem->content, elem->content_size);
-	ft_putstr("] (size=");
-	ft_putnbr((int) elem->content_size);
-	ft_putendl(")");
-	if (elem->next == NULL)
-		i = 0;
+	else
+		free((*ds)->str);
+	free(*ds);
+	return (ret);
 }
