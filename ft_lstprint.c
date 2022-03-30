@@ -15,6 +15,7 @@
 void	ft_lstprint(t_list *elem)
 {
 	static int	i;
+
 	if (!elem)
 	{
 		ft_putendl("Null list");

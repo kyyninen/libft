@@ -117,13 +117,10 @@ size_t	ft_lstcount(t_list *alst);
 void	ft_lstprint(t_list *elem);
 
 /*
- * Dynamic string functions
+ * Dynamic strings
  */
 
-t_dstr	*ft_dstrnew(const char *str, size_t len);
-ssize_t	ft_dstradd(t_dstr *ds, const char *str, size_t len);
-char	*ft_dstrdrop(t_dstr *ds);
-void	ft_dstrfree(t_dstr *ds);
-char	*ft_dstrbreak(t_dstr *ds);
-t_dstr	*ft_dstrconv(const char *str);
+ssize_t	ft_dstrbuild(t_dstr **ds, const char *str, size_t len);
+int		ft_dstrclose(t_dstr **ds, char **target);
+
 #endif
