@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 17:24:03 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/13 14:12:56 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/04/01 12:27:48 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memalloc(size_t size)
 {
 	void	*ptr;
 
+	if (size == 0)
+		return (NULL);
 	ptr = malloc(size);
 	if (!ptr)
 		return (NULL);
