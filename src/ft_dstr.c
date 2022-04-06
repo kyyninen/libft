@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:57:51 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/04/06 10:57:53 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/04/06 14:34:17 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_dstrclose(t_dstr **ds, char **target)
 		return (ret);
 	if (target != NULL)
 	{
-		ret = 1;
+		ret = (int)(*ds)->len;
 		if ((*ds)->alloced == (*ds)->len + 1)
 			*target = (*ds)->str;
 		else
