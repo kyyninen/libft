@@ -6,12 +6,11 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:42:17 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/04/07 08:57:16 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:06:26 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 /*
  * So the logic here is:
@@ -31,7 +30,7 @@
  * long conversion thing.
  */
 
-void    *ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
     long    blong;
     void    *ptr;
