@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:07:36 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/04/06 11:30:44 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/05/24 15:04:10 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,8 @@ void	ft_lstprint(t_list *elem);
  * Dynamic strings
  */
 
+ssize_t ft_dstraddc(t_dstr **ds, const char c);
+ssize_t	ft_dstrnew(t_dstr **ds, size_t len);
 ssize_t	ft_dstrbuild(t_dstr **ds, const char *str, size_t len);
 ssize_t	ft_dstrclose(t_dstr **ds, char **target);
 
