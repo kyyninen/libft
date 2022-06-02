@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:57:51 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/06/02 13:51:20 by teppo            ###   ########.fr       */
+/*   Updated: 2022/06/02 16:06:24 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ ssize_t	ft_dstrbuild(t_dstr **ds, const char *str, size_t len)
 		ft_dstrnew(ds, len);
 	else if ((*ds)->alloced < (*ds)->len + len + 1)
 	{
-		if (dstrgrow(ds, (*ds)->len * 2) < 0)
+		if (dstrgrow(ds, ((*ds)->len + len) * 2) < 0)
 			return (-1);
 	}
 	ft_memcpy((void *)((*ds)->str + (*ds)->len), (void *)str, len);
