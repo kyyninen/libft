@@ -6,7 +6,7 @@
 #    By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 19:01:12 by tpolonen          #+#    #+#              #
-#    Updated: 2022/04/07 02:56:06 by tpolonen         ###   ########.fr        #
+#    Updated: 2022/06/02 13:40:35 by teppo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC_DIR = src
 OBJ_DIR = obj
 
 CC = gcc
-CFLAGS = -c -Wall -Wextra -Werror -I$(HEADER_DIR)
+CFLAGS = -c -g -Wall -Wextra -Werror -I$(HEADER_DIR)
 ARFLAGS = rcs
 
 NAME = libft.a

@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:57:51 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/06/02 12:50:28 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/06/02 13:51:20 by teppo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static ssize_t dstrgrow(t_dstr **ds, ssize_t len)
 	new_str = (char *) ft_calloc(1, new_size * sizeof(char));
 	if (!new_str)
 		return (-1);
-	ft_memcpy((void *)new_str, (void *)(*ds)->str, (*ds)->len + 1);
+	ft_memcpy((void *)new_str, (void *)(*ds)->str, (*ds)->len);
 	free((*ds)->str);
 	(*ds)->str = new_str;
 	(*ds)->alloced = new_size;
@@ -47,7 +47,7 @@ ssize_t	ft_dstrnew(t_dstr **ds, size_t len)
 ssize_t ft_dstraddc(t_dstr **ds, const char c)
 {
 	if (*ds == NULL)
-		ft_dstrnew(ds, len);
+		ft_dstrnew(ds, 8);
 	else if ((*ds)->alloced < (*ds)->len + 1)
 	{
 		if (dstrgrow(ds, (*ds)->len * 2) < 0)
