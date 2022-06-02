@@ -6,7 +6,7 @@
 #    By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 19:01:12 by tpolonen          #+#    #+#              #
-#    Updated: 2022/06/02 13:40:35 by teppo            ###   ########.fr        #
+#    Updated: 2022/06/02 17:08:21 by tpolonen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ $(NAME): $(OBJ)
 	ranlib $(NAME)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
-	@$(CC) $(CFLAGS) $< -o $@
+	$(CC) $(CFLAGS) $< -o $@
 
 $(OBJ_DIR):
 	mkdir -p $@

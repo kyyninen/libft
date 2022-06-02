@@ -6,13 +6,13 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:57:51 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/06/02 16:06:24 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/06/02 17:01:52 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static ssize_t dstrgrow(t_dstr **ds, ssize_t len)
+static ssize_t	dstrgrow(t_dstr **ds, ssize_t len)
 {
 	size_t	new_size;
 	char	*new_str;
@@ -44,7 +44,7 @@ ssize_t	ft_dstrnew(t_dstr **ds, size_t len)
 	return (len);
 }
 
-ssize_t ft_dstraddc(t_dstr **ds, const char c)
+ssize_t	ft_dstraddc(t_dstr **ds, const char c)
 {
 	if (*ds == NULL)
 		ft_dstrnew(ds, 8);
@@ -54,8 +54,8 @@ ssize_t ft_dstraddc(t_dstr **ds, const char c)
 			return (-1);
 	}
 	(*ds)->str[(*ds)->len] = c;
-	(*ds)->len++;	
-	return((*ds)->len);
+	(*ds)->len++;
+	return ((*ds)->len);
 }
 
 ssize_t	ft_dstrbuild(t_dstr **ds, const char *str, size_t len)
