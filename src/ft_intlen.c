@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 16:33:18 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/13 14:10:17 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/06/02 18:36:37 by teppo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,34 @@ size_t	ft_intlen(int n, int base)
 	len = 0;
 	if (n <= 0)
 		len++;
+	while (n != 0)
+	{
+		n /= base;
+		len++;
+	}
+	return (len);
+}
+
+size_t	ft_ssizelen(ssize_t n, int base)
+{
+	size_t	len;
+
+	len = 0;
+	if (n <= 0)
+		len++;
+	while (n != 0)
+	{
+		n /= base;
+		len++;
+	}
+	return (len);
+}
+
+size_t	ft_sizelen(size_t n, int base)
+{
+	size_t	len;
+
+	len = 0;
 	while (n != 0)
 	{
 		n /= base;

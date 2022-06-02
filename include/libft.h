@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:07:36 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/06/02 17:00:00 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/06/02 18:42:50 by teppo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
 size_t	ft_intlen(int n, int base);
+size_t	ft_ssizelen(ssize_t n, int base);
+size_t	ft_sizelen(size_t n, int base);
 void	ft_putchar(char c);
 void	ft_putstr(char const *str);
 void	ft_putendl(char const *str);
@@ -104,7 +106,7 @@ void	ft_putstr_fd(char const *str, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putmem(const char *ptr, size_t count);
-void	ft_putbit(size_t const size, void const *ptr);
+void	ft_putbit(const void *ptr, size_t count);
 
 /*
  * List functions
