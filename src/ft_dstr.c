@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:57:51 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/05/24 15:10:15 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/06/02 12:50:28 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,11 @@ ssize_t	ft_dstrnew(t_dstr **ds, size_t len)
 
 ssize_t ft_dstraddc(t_dstr **ds, const char c)
 {
-	if ((*ds)->alloced < (*ds)->len + 1)
+	if (*ds == NULL)
+		ft_dstrnew(ds, len);
+	else if ((*ds)->alloced < (*ds)->len + 1)
 	{
-		if (dstrgrow(ds, (*ds)->len * 2 < 0))
+		if (dstrgrow(ds, (*ds)->len * 2) < 0)
 			return (-1);
 	}
 	(*ds)->str[(*ds)->len] = c;
@@ -59,11 +61,7 @@ ssize_t ft_dstraddc(t_dstr **ds, const char c)
 ssize_t	ft_dstrbuild(t_dstr **ds, const char *str, size_t len)
 {
 	if (*ds == NULL)
-	{
-		*ds = (t_dstr *) ft_memalloc(sizeof(t_dstr));
-		(*ds)->str = ft_strnew(len);
-		(*ds)->alloced = len + 1;
-	}
+		ft_dstrnew(ds, len);
 	else if ((*ds)->alloced < (*ds)->len + len + 1)
 	{
 		if (dstrgrow(ds, (*ds)->len * 2) < 0)
