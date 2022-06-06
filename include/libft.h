@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:07:36 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/06/02 18:42:50 by teppo            ###   ########.fr       */
+/*   Updated: 2022/06/06 15:42:52 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
 int		ft_abs(int n);
+int		ft_llabs(long long n);
+int 	ft_ssabs(ssize_t n);
 int		ft_max(int a, int b);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
