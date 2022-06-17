@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 16:00:08 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/06/06 17:54:42 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/06/17 19:12:50 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ long long	ft_llabs(long long n)
 	return (n);
 }
 
-size_t ft_ssabs(ssize_t n)
+size_t	ft_ssabs(ssize_t n)
 {
 	if (n < 0)
-		return ((size_t) -n);
+		return ((size_t)(n * -1));
 	return (n);
 }

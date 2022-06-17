@@ -6,14 +6,16 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:45:33 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/13 14:15:26 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/06/17 19:02:44 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+int	ft_putendl(char const *s)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	int	ret;
+
+	ret = write(1, s, ft_strlen(s));
+	return (ret + write(1, "\n", 1));
 }
