@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:07:36 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/06/06 17:56:10 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/06/17 16:50:32 by teppo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,13 @@ int			ft_atoi(const char *str);
 int			ft_abs(int n);
 long long	ft_llabs(long long n);
 size_t 		ft_ssabs(ssize_t n);
+double		ft_fabs(float n);
+float		ft_fabsf(float n);
+long double	ft_fabsl(float n);
 int			ft_max(int a, int b);
+double		ft_pow(double num, double exponent);
+float		ft_powf(float num, float exponent);
+long double	ft_powl(long double num, long double exponent);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
