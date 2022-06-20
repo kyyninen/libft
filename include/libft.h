@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:07:36 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/06/17 19:11:26 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/06/20 10:51:26 by teppo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,16 +105,16 @@ char		*ft_itoa(int n);
 size_t		ft_intlen(int n, int base);
 size_t		ft_ssizelen(ssize_t n, int base);
 size_t		ft_sizelen(size_t n, int base);
-void		ft_putchar(char c);
+int			ft_putchar(char c);
 int			ft_putstr(char const *str);
 int			ft_putendl(char const *str);
-void		ft_putnbr(int n);
-void		ft_putchar_fd(char c, int fd);
+int			ft_putnbr(int n);
+int			ft_putchar_fd(char c, int fd);
 int			ft_putstr_fd(char const *str, int fd);
 int			ft_putendl_fd(char const *s, int fd);
-void		ft_putnbr_fd(int n, int fd);
-void		ft_putmem(const char *ptr, size_t count);
-void		ft_putbit(const void *ptr, size_t count);
+int			ft_putnbr_fd(int n, int fd);
+int			ft_putmem(const char *ptr, size_t count);
+int			ft_putbit(const void *ptr, size_t count);
 
 /*
  * List	functions

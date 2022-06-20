@@ -6,13 +6,13 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:56:00 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/11/14 17:36:53 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/06/20 10:46:21 by teppo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
-	ft_putnbr_fd(n, 1);
+	return (ft_putnbr_fd(n, 1));
 }

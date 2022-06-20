@@ -6,13 +6,13 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 20:27:40 by tpolonen          #+#    #+#             */
-/*   Updated: 2021/12/13 14:15:48 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/06/20 10:46:01 by teppo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putmem(const char *ptr, size_t count)
+int	ft_putmem(const char *ptr, size_t count)
 {
-	write(1, ptr, count);
+	return (write(1, ptr, count));
 }
