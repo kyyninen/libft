@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:07:36 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/06/20 10:51:26 by teppo            ###   ########.fr       */
+/*   Updated: 2022/06/21 19:02:59 by teppo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,6 @@ double		ft_fabs(float n);
 float		ft_fabsf(float n);
 long double	ft_fabsl(float n);
 int			ft_max(int a, int b);
-double		ft_pow(double num, double exponent);
-float		ft_powf(float num, float exponent);
-long double	ft_powl(long double num, long double exponent);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
