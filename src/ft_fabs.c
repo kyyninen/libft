@@ -6,7 +6,7 @@
 /*   By: teppo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 16:25:10 by teppo             #+#    #+#             */
-/*   Updated: 2022/06/17 17:37:29 by teppo            ###   ########.fr       */
+/*   Updated: 2022/06/21 20:35:10 by teppo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ float	ft_fabsf(float n)
 	return (n);
 }
 
-double	ft_fabs(float n)
+double	ft_fabs(double n)
 {
 	if (n == -0.0)
 		return (0.0);
@@ -28,7 +28,7 @@ double	ft_fabs(float n)
 	return (n);
 }
 
-long double	ft_fabsl(float n)
+long double	ft_fabsl(long double n)
 {
 	if (n == -0.0L)
 		return (0.0L);

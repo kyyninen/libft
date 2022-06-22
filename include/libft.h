@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:07:36 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/06/21 19:02:59 by teppo            ###   ########.fr       */
+/*   Updated: 2022/06/22 23:11:27 by teppo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ int			ft_atoi(const char *str);
 int			ft_abs(int n);
 long long	ft_llabs(long long n);
 size_t		ft_ssabs(ssize_t n);
-double		ft_fabs(float n);
+double		ft_fabs(double n);
 float		ft_fabsf(float n);
-long double	ft_fabsl(float n);
+long double	ft_fabsl(long double n);
 int			ft_max(int a, int b);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
@@ -112,6 +112,9 @@ int			ft_putendl_fd(char const *s, int fd);
 int			ft_putnbr_fd(int n, int fd);
 int			ft_putmem(const char *ptr, size_t count);
 int			ft_putbit(const void *ptr, size_t count);
+int			ft_putset(int count, char c);
+int			ft_putnum(size_t num, int base, int min_len, int all_caps);
+int			ft_putnums(ssize_t num, int base, int min_len, int all_caps);
 
 /*
  * List	functions

@@ -6,7 +6,7 @@
 #    By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 19:01:12 by tpolonen          #+#    #+#              #
-#    Updated: 2022/06/02 17:08:21 by tpolonen         ###   ########.fr        #
+#    Updated: 2022/06/21 19:21:38 by teppo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ $(OBJ_DIR):
 	mkdir -p $@
 
 clean:
-	@/bin/rm -r $(OBJ_DIR)
+	@/bin/rm -rf $(OBJ_DIR)
 
 fclean: clean
 	/bin/rm -f $(NAME)
