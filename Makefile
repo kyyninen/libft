@@ -6,7 +6,7 @@
 #    By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 19:01:12 by tpolonen          #+#    #+#              #
-#    Updated: 2022/06/21 19:21:38 by teppo            ###   ########.fr        #
+#    Updated: 2022/06/29 21:42:24 by tpolonen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,20 +27,23 @@ OBJ := $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	@echo "Compiled libft objs"
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@echo "Compiled libft.a"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) $< -o $@
+	@$(CC) $(CFLAGS) $< -o $@
 
 $(OBJ_DIR):
-	mkdir -p $@
+	@mkdir -p $@
 
 clean:
 	@/bin/rm -rf $(OBJ_DIR)
+	@echo "Cleaned libft objs"
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
+	@echo "Removed libft.a"
 
 re: fclean all
 
