@@ -6,7 +6,7 @@
 #    By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/12 19:01:12 by tpolonen          #+#    #+#              #
-#    Updated: 2022/06/29 21:42:24 by tpolonen         ###   ########.fr        #
+#    Updated: 2022/10/01 19:43:30 by tpolonen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,8 @@ $(OBJ_DIR):
 	@mkdir -p $@
 
 clean:
-	@/bin/rm -rf $(OBJ_DIR)
-	@echo "Cleaned libft objs"
+	@if [ -d "$(OBJ_DIR)" ]; \
+		then @/bin/rm -rf $(OBJ_DIR); echo "Cleaned libft objs"; fi
 
 fclean: clean
 	@/bin/rm -f $(NAME)
