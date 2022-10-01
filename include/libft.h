@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:07:36 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/10/01 20:11:58 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/10/01 20:46:56 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <limits.h>
 # define DINT_DEF_SIZE 10
+# define GETLINE_BUFF_SIZE 128
 
 typedef struct s_list
 {
@@ -38,6 +39,15 @@ typedef struct s_dintarr
     size_t  		alloced;
     size_t  		len;
 }       		t_dintarr;
+
+typedef struct s_buff
+{
+	int				fd;
+	char			content[GETLINE_BUFF_SIZE];
+	ssize_t			bytes;
+	ssize_t			offset;
+	struct s_buff	*next;
+}				t_buff;
 
 /*
  * Libc functions
@@ -123,6 +133,7 @@ int			ft_putbit(const void *ptr, size_t count);
 int			ft_putset(int count, char c);
 int			ft_putnum(size_t num, int base, int min_len, int all_caps);
 int			ft_putnums(ssize_t num, int base, int min_len, int all_caps);
+int			ft_getline(const int fd, char **line);
 
 /*
  * List	functions

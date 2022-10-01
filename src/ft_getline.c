@@ -6,11 +6,11 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 17:22:03 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/03/31 10:01:23 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/10/01 20:46:30 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static t_buff	*get_buff(const int fd, t_buff **buffs)
 {
@@ -81,7 +81,7 @@ int	ft_getline(const int fd, char **line)
 		if (buff->bytes <= 0 || buff->offset >= buff->bytes)
 		{
 			buff->offset = 0;
-			buff->bytes = read(buff->fd, buff->content, BUFF_SIZE);
+			buff->bytes = read(buff->fd, buff->content, GETLINE_BUFF_SIZE);
 		}
 		ret = read_fd(buff, &new_line);
 	}
