@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:07:36 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/06/22 23:11:27 by teppo            ###   ########.fr       */
+/*   Updated: 2022/10/01 20:11:58 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# define DINT_DEF_SIZE 10
 
 typedef struct s_list
 {
@@ -30,6 +31,13 @@ typedef struct s_dstr
 	size_t			alloced;
 	size_t			len;
 }				t_dstr;
+
+typedef struct s_dintarr
+{
+    int     		*arr;
+    size_t  		alloced;
+    size_t  		len;
+}       		t_dintarr;
 
 /*
  * Libc functions
@@ -138,5 +146,13 @@ ssize_t		ft_dstraddc(t_dstr **ds, const char c);
 ssize_t		ft_dstrnew(t_dstr **ds, size_t len);
 ssize_t		ft_dstrbuild(t_dstr **ds, const char *str, size_t len);
 ssize_t		ft_dstrclose(t_dstr **ds, char **target);
+
+/*
+ * Dynamic integer arrays
+ */
+
+ssize_t     ft_dintarr_create(t_dintarr **darr, size_t size);
+ssize_t 	ft_dintarr_add(t_dintarr **darr, const int n);
+ssize_t 	ft_dintarr_close(t_dintarr **src, int **dst);
 
 #endif
