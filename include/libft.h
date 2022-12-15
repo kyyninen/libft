@@ -6,7 +6,7 @@
 /*   By: tpolonen <tpolonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 14:07:36 by tpolonen          #+#    #+#             */
-/*   Updated: 2022/10/01 20:46:56 by tpolonen         ###   ########.fr       */
+/*   Updated: 2022/10/07 18:33:00 by tpolonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 # define LIBFT_H
 # include <string.h>
 # include <stdlib.h>
-# include <unistd.h>
+# ifndef WIN
+#  include <unistd.h>
+# else
+#  include <Windows.h>
+# endif
 # include <limits.h>
 # define DINT_DEF_SIZE 10
 # define GETLINE_BUFF_SIZE 128
@@ -35,10 +39,10 @@ typedef struct s_dstr
 
 typedef struct s_dintarr
 {
-    int     		*arr;
-    size_t  		alloced;
-    size_t  		len;
-}       		t_dintarr;
+	int				*arr;
+	size_t			alloced;
+	size_t			len;
+}				t_dintarr;
 
 typedef struct s_buff
 {
@@ -86,6 +90,8 @@ double		ft_fabs(double n);
 float		ft_fabsf(float n);
 long double	ft_fabsl(long double n);
 int			ft_max(int a, int b);
+size_t		ft_smax(size_t a, size_t b);
+size_t		ft_smin(size_t a, size_t b);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
@@ -116,7 +122,8 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strtrim(char const *s);
 char		**ft_strsplit(char const *s, char c);
-char		*ft_itoa(int n);
+char		*ft_itoa(int n, int base);
+char		*ft_tobase(int n, int base, char *buf);
 size_t		ft_intlen(int n, int base);
 size_t		ft_ssizelen(ssize_t n, int base);
 size_t		ft_sizelen(size_t n, int base);
@@ -162,8 +169,9 @@ ssize_t		ft_dstrclose(t_dstr **ds, char **target);
  * Dynamic integer arrays
  */
 
-ssize_t     ft_dintarr_create(t_dintarr **darr, size_t size);
-ssize_t 	ft_dintarr_add(t_dintarr **darr, const int n);
-ssize_t 	ft_dintarr_close(t_dintarr **src, int **dst);
+ssize_t		ft_dintarr_create(t_dintarr **darr, size_t size);
+ssize_t		ft_dintarr_add(t_dintarr **darr, const int n);
+ssize_t		ft_dintarr_close(t_dintarr **src, int **dst);
+ssize_t		ft_dintarr_clear(t_dintarr **darr);
 
 #endif
